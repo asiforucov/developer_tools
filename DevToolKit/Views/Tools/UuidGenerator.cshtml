@@ -1,0 +1,29 @@
+@model DevToolKit.Models.UuidGeneratorViewModel
+@{
+    ViewData["Title"] = "UUID Generator";
+}
+<div class="max-w-xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">UUID Generator</h1>
+    <form method="post" class="flex items-end gap-4 mb-4">
+        <div>
+            <label class="block font-semibold mb-1">Count</label>
+            <input type="number" name="Count" min="1" max="100" value="@Model?.Count" class="w-24 rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500" />
+        </div>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
+    </form>
+    @if (Model?.Uuids != null && Model.Uuids.Any())
+    {
+        <div class="mt-6">
+            <label class="font-semibold mb-2 block">Generated UUIDs</label>
+            <ul class="space-y-2">
+                @for (int i = 0; i < Model.Uuids.Count; i++)
+                {
+                    <li class="flex items-center gap-2">
+                        <input type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.Uuids[i]" id="uuid-@i" />
+                        <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('uuid-@i').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div> 

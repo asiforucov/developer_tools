@@ -1,0 +1,21 @@
+@model DevToolKit.Models.FileToBase64ViewModel
+@{
+    ViewData["Title"] = "File to Base64";
+}
+<div class="max-w-xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">File to Base64</h1>
+    <form method="post" enctype="multipart/form-data" class="space-y-4">
+        <input type="file" name="UploadFile" class="block w-full text-gray-900 dark:text-gray-100" />
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
+    </form>
+    @if (!string.IsNullOrEmpty(Model?.Base64String))
+    {
+        <div class="mt-6">
+            <div class="flex items-center justify-between mb-1">
+                <label class="font-semibold">Base64 String</label>
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('base64-output').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <textarea id="base64-output" rows="8" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" readonly>@Model.Base64String</textarea>
+        </div>
+    }
+</div> 

@@ -1,0 +1,39 @@
+@model DevToolKit.Models.JwtDecoderViewModel
+@{
+    ViewData["Title"] = "JWT Decoder";
+}
+<div class="max-w-2xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">JWT Decoder</h1>
+    <form method="post" class="space-y-4">
+        <textarea name="Input" rows="4" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500" placeholder="Paste JWT token here...">@Model?.Input</textarea>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Decode</button>
+    </form>
+    @if (!string.IsNullOrEmpty(Model?.Error))
+    {
+        <div class="text-red-600 mt-4">@Model.Error</div>
+    }
+    @if (!string.IsNullOrEmpty(Model?.HeaderJson))
+    {
+        <div class="mt-6">
+            <div class="flex items-center justify-between mb-1">
+                <label class="font-semibold">Header</label>
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('jwt-header').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <textarea id="jwt-header" rows="6" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 font-mono" readonly>@Model.HeaderJson</textarea>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(Model?.PayloadJson))
+    {
+        <div class="mt-6">
+            <div class="flex items-center justify-between mb-1">
+                <label class="font-semibold">Payload</label>
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('jwt-payload').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <textarea id="jwt-payload" rows="10" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 font-mono" readonly>@Model.PayloadJson</textarea>
+        </div>
+    }
+    @if (Model?.Expiration != null)
+    {
+        <div class="mt-4 text-sm text-gray-700 dark:text-gray-300">Expiration: <span class="font-semibold">@Model.Expiration.Value.ToString("u")</span></div>
+    }
+</div> 

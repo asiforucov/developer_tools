@@ -1,0 +1,24 @@
+@model DevToolKit.Models.LoremIpsumGeneratorViewModel
+@{
+    ViewData["Title"] = "Lorem Ipsum Generator";
+}
+<div class="max-w-3xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">Lorem Ipsum Generator</h1>
+    <form method="post" class="flex items-end gap-4 mb-4">
+        <div>
+            <label class="block font-semibold mb-1">Paragraphs</label>
+            <input type="number" name="Paragraphs" min="1" max="20" value="@Model?.Paragraphs" class="w-24 rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500" />
+        </div>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
+    </form>
+    @if (Model?.ParagraphResults != null && Model.ParagraphResults.Any())
+    {
+        <div class="mt-8">
+            <div class="flex items-center justify-between mb-1">
+                <label class="font-semibold text-lg">Lorem Ipsum Text</label>
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('lorem-output').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <textarea id="lorem-output" rows="16" class="w-full rounded-lg border-2 border-blue-300 dark:border-blue-700 bg-gray-100 dark:bg-gray-900 dark:text-gray-100 font-mono text-base p-4" readonly>@string.Join("\n\n", Model.ParagraphResults)</textarea>
+        </div>
+    }
+</div> 

@@ -1,0 +1,46 @@
+@model DevToolKit.Models.CaseConverterViewModel
+@{
+    ViewData["Title"] = "Case Converter";
+}
+<div class="max-w-xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">Case Converter</h1>
+    <form method="post" class="space-y-4">
+        <input type="text" name="Input" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" placeholder="Enter text..." value="@Model?.Input" />
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
+    </form>
+    @if (!string.IsNullOrEmpty(Model?.Input))
+    {
+        <div class="mt-6 space-y-2">
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">camelCase</label>
+                <input id="camel-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.CamelCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('camel-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">PascalCase</label>
+                <input id="pascal-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.PascalCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('pascal-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">UPPERCASE</label>
+                <input id="upper-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.UpperCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('upper-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">lowercase</label>
+                <input id="lower-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.LowerCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('lower-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">kebab-case</label>
+                <input id="kebab-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.KebabCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('kebab-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <label class="w-32 font-semibold">snake_case</label>
+                <input id="snake-case" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.SnakeCase" />
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('snake-case').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+        </div>
+    }
+</div> 

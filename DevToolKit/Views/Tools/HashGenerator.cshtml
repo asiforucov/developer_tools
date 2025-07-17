@@ -1,0 +1,26 @@
+@model DevToolKit.Models.HashGeneratorViewModel
+@{
+    ViewData["Title"] = "Hash Generator";
+}
+<div class="max-w-xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">Hash Generator</h1>
+    <form method="post" class="space-y-4">
+        <input type="text" name="Input" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" placeholder="Enter text..." value="@Model?.Input" />
+        <select name="Algorithm" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100">
+            <option value="MD5" selected="@(Model?.Algorithm == "MD5" ? "selected" : null)">MD5</option>
+            <option value="SHA1" selected="@(Model?.Algorithm == "SHA1" ? "selected" : null)">SHA1</option>
+            <option value="SHA256" selected="@(Model?.Algorithm == "SHA256" ? "selected" : null)">SHA256</option>
+        </select>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate Hash</button>
+    </form>
+    @if (!string.IsNullOrEmpty(Model?.Hash))
+    {
+        <div class="mt-6">
+            <div class="flex items-center justify-between mb-1">
+                <label class="font-semibold">Hash Result</label>
+                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('hash-output').value)" class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            </div>
+            <input id="hash-output" type="text" readonly class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" value="@Model.Hash" />
+        </div>
+    }
+</div> 

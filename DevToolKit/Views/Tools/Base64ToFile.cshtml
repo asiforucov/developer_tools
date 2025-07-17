@@ -1,0 +1,22 @@
+@model DevToolKit.Models.Base64ToFileViewModel
+@{
+    ViewData["Title"] = "Base64 to File";
+}
+<div class="max-w-xl mx-auto py-8">
+    <h1 class="text-2xl font-bold mb-4">Base64 to File</h1>
+    <form method="post" class="space-y-4">
+        <textarea name="Base64String" rows="6" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500" placeholder="Paste base64 string here...">@Model?.Base64String</textarea>
+        <input type="text" name="FileName" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" placeholder="Optional filename (e.g. file.txt)" value="@Model?.FileName" />
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert & Download</button>
+    </form>
+    @if (Model?.IsValid == true && Model.DownloadFileContent != null)
+    {
+        <div class="mt-6">
+            <a download="@Model.DownloadFileName" href="data:application/octet-stream;base64,@Convert.ToBase64String(Model.DownloadFileContent)" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Download File</a>
+        </div>
+    }
+    @if (Model?.IsValid == false)
+    {
+        <div class="text-red-600 mt-2">Invalid base64 string.</div>
+    }
+</div> 
