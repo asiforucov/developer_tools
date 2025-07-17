@@ -146,7 +146,7 @@ namespace DevToolKit.Controllers
         [HttpPost("/tools/lorem-ipsum-generator")]
         public IActionResult LoremIpsumGenerator(LoremIpsumGeneratorViewModel model)
         {
-            int count = model.Paragraphs > 0 && model.Paragraphs <= 20 ? model.Paragraphs : 1;
+            int count = model.Paragraphs > 0 && model.Paragraphs <= 100 ? model.Paragraphs : 1;
             model.ParagraphResults = LoremIpsumService.Generate(count);
             return View(model);
         }
