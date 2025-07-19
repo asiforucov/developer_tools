@@ -29,10 +29,9 @@
         updateIcons();
     }
 
-    // Initial theme
+    // Initial theme: only use localStorage, ignore system preference
     const userTheme = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (userTheme === 'dark' || (!userTheme && systemDark)) {
+    if (userTheme === 'dark') {
         html.classList.add('dark');
         html.setAttribute('data-theme', 'dark');
     } else {

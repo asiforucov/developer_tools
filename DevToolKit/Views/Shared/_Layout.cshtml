@@ -2,11 +2,68 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Developer Tools</title>
+    <meta name="description" content="Free online developer tools: JSON Formatter, Base64 converter, UUID generator, Regex tester and more.">
+    <meta name="keywords" content="developer tools, json formatter, base64 to file, regex tester, uuid generator, qr code generator, hash generator, free dev tools">
+    <meta name="author" content="Developer Tools">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://developertools.codeveria.az/@ViewContext.RouteData.Values["controller"]/@ViewContext.RouteData.Values["action"]" />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Developer Tools - Free Online Developer Tools" />
+    <meta property="og:description" content="JSON Formatter, Regex Tester, Base64 Converter and other useful tools. All in one place!" />
+    <meta property="og:url" content="https://developertools.codeveria.az/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://developertools.codeveria.az/images/seo-preview.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Developer Tools - Free Online Developer Tools" />
+    <meta name="twitter:description" content="Use 20+ developer tools in one place." />
+    <meta name="twitter:image" content="https://developertools.codeveria.az/images/seo-preview.png" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sgrpbq6opm");
+    </script>
+    @{
+        var pageTitle = ViewData["Title"] as string ?? "Developer Tools";
+        var controller = ViewContext.RouteData.Values["controller"] as string ?? "";
+        var url = $"https://developertools.codeveria.az/{controller}";
+        var jsonPageTitle = Newtonsoft.Json.JsonConvert.ToString(pageTitle);
+        var jsonUrl = Newtonsoft.Json.JsonConvert.ToString(url);
+    }
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "WebApplication",
+      "name": @Html.Raw(jsonPageTitle),
+      "applicationCategory": "DeveloperTool",
+      "url": @Html.Raw(jsonUrl),
+      "operatingSystem": "All",
+      "offers": {
+        "@@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="~/favv.png" />
     <!-- Tailwind CSS CDN (dev only, use npm in prod) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ50Q3G5B6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HZ50Q3G5B6');
+    </script>
+
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
     <!-- Navbar -->

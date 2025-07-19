@@ -2,11 +2,19 @@
 @{
     ViewData["Title"] = "QR Code Generator";
 }
+<script>
+    function logToolUsage(toolName) {
+        gtag('event', 'tool_used', {
+            'event_category': 'Tool',
+            'event_label': toolName
+        });
+    }
+</script>
 <div class="max-w-md mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">QR Code Generator</h1>
     <form method="post" class="space-y-4">
         <input type="text" name="Input" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" placeholder="Enter text to encode as QR..." value="@Model?.Input" />
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
+        <button onclick="logToolUsage('QR Code Generator')" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
     </form>
     @if (!string.IsNullOrEmpty(Model?.QrCodeDataUrl))
     {

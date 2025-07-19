@@ -2,11 +2,19 @@
 @{
     ViewData["Title"] = "Case Converter";
 }
+<script>
+    function logToolUsage(toolName) {
+        gtag('event', 'tool_used', {
+            'event_category': 'Tool',
+            'event_label': toolName
+        });
+    }
+</script>
 <div class="max-w-xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">Case Converter</h1>
     <form method="post" class="space-y-4">
         <input type="text" name="Input" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100" placeholder="Enter text..." value="@Model?.Input" />
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
+        <button onclick="logToolUsage('Case Converter')" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
     </form>
     @if (!string.IsNullOrEmpty(Model?.Input))
     {

@@ -2,13 +2,21 @@
 @{
     ViewData["Title"] = "Text Diff Checker";
 }
+<script>
+    function logToolUsage(toolName) {
+        gtag('event', 'tool_used', {
+            'event_category': 'Tool',
+            'event_label': toolName
+        });
+    }
+</script>
 <div class="max-w-3xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">Text Diff Checker</h1>
     <form method="post" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
             <label class="block font-semibold mb-1">Text 1</label>
             <textarea name="Text1" rows="8" class="w-full rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500">@Model?.Text1</textarea>
-            <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('diff-text1').value)" class="mt-1 text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
+            <button  type="button" onclick="navigator.clipboard.writeText(document.getElementById('diff-text1').value)" class="mt-1 text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
         </div>
         <div>
             <label class="block font-semibold mb-1">Text 2</label>
@@ -16,7 +24,7 @@
             <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('diff-text2').value)" class="mt-1 text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-blue-100 dark:hover:bg-blue-900">Copy</button>
         </div>
         <div class="col-span-1 md:col-span-2 flex justify-end">
-            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Compare</button>
+            <button onclick="logToolUsage('Text Diff')" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Compare</button>
         </div>
     </form>
     @if (!string.IsNullOrEmpty(Model?.DiffResult))

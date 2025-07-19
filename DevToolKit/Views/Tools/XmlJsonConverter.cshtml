@@ -2,6 +2,14 @@
 @{
     ViewData["Title"] = "XML ↔ JSON Converter";
 }
+<script>
+    function logToolUsage(toolName) {
+        gtag('event', 'tool_used', {
+            'event_category': 'Tool',
+            'event_label': toolName
+        });
+    }
+</script>
 <div class="max-w-2xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">XML ↔ JSON Converter</h1>
     <form method="post" class="space-y-4">
@@ -10,7 +18,7 @@
             <label><input type="radio" name="Mode" value="xml2json" @(Model?.Mode == "xml2json" ? "checked" : null) /> XML → JSON</label>
             <label><input type="radio" name="Mode" value="json2xml" @(Model?.Mode == "json2xml" ? "checked" : null) /> JSON → XML</label>
         </div>
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
+        <button onclick="logToolUsage('XML JSON Converter')" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Convert</button>
     </form>
     @if (!string.IsNullOrEmpty(Model?.Error))
     {

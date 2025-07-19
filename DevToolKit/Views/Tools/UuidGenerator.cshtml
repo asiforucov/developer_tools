@@ -2,6 +2,14 @@
 @{
     ViewData["Title"] = "UUID Generator";
 }
+<script>
+    function logToolUsage(toolName) {
+        gtag('event', 'tool_used', {
+            'event_category': 'Tool',
+            'event_label': toolName
+        });
+    }
+</script>
 <div class="max-w-xl mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">UUID Generator</h1>
     <form method="post" class="flex items-end gap-4 mb-4">
@@ -9,7 +17,7 @@
             <label class="block font-semibold mb-1">Count</label>
             <input type="number" name="Count" min="1" max="100" value="@Model?.Count" class="w-24 rounded border-gray-300 dark:bg-gray-800 dark:text-gray-100 focus:ring-blue-500 focus:border-blue-500" />
         </div>
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
+        <button onclick="logToolUsage('UUID Generator')" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Generate</button>
     </form>
     @if (Model?.Uuids != null && Model.Uuids.Any())
     {

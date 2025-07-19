@@ -9,12 +9,28 @@
   <component name="ChangeListManager">
     <list default="true" id="a9296282-d98e-45b9-a470-d365dc7cd498" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevToolKit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevToolKit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevToolKit/Controllers/ToolsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Controllers/ToolsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevToolKit/Models/PasswordGeneratorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Models/PasswordGeneratorViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevToolKit/Models/RandomStringGeneratorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Models/RandomStringGeneratorViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/Base64ToFile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/Base64ToFile.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/CaseConverter.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/CaseConverter.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/ColorPicker.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/ColorPicker.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/FileToBase64.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/FileToBase64.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/HashGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/HashGenerator.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/JsonFormatter.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/JsonFormatter.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/JwtDecoder.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/JwtDecoder.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/LoremIpsumGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/LoremIpsumGenerator.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/PasswordGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/PasswordGenerator.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/QrCodeGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/QrCodeGenerator.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/RandomStringGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/RandomStringGenerator.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/RegexTester.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/RegexTester.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/SlugGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/SlugGenerator.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/SqlFormatter.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/SqlFormatter.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/TextDiff.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/TextDiff.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/TextToHex.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/TextToHex.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/UrlEncoderDecoder.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/UrlEncoderDecoder.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/UuidGenerator.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/UuidGenerator.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/XmlFormatter.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/XmlFormatter.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/Views/Tools/XmlJsonConverter.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/Views/Tools/XmlJsonConverter.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevToolKit/wwwroot/js/theme-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/DevToolKit/wwwroot/js/theme-toggle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +64,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.DevToolKit.executor": "Run",
+    "Publish to folder.Publish DevToolKit to folder (1).executor": "Run",
+    "Publish to folder.Publish DevToolKit to folder (2).executor": "Run",
+    "Publish to folder.Publish DevToolKit to folder (3).executor": "Run",
     "Publish to folder.Publish DevToolKit to folder.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -60,6 +79,18 @@
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.DevToolKit">
+    <configuration name="Publish DevToolKit to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/Desktop/publishh" target_framework="net6.0" uuid_high="5868998836812661617" uuid_low="-5833175810788601596" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DevToolKit to folder (2)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/Desktop/publishh" target_framework="net6.0" uuid_high="5868998836812661617" uuid_low="-5833175810788601596" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DevToolKit to folder (3)" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/Desktop/publishh" target_framework="net6.0" uuid_high="5868998836812661617" uuid_low="-5833175810788601596" />
+      <method v="2" />
+    </configuration>
     <configuration name="Publish DevToolKit to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/Desktop/publishh" target_framework="net6.0" uuid_high="5868998836812661617" uuid_low="-5833175810788601596" />
       <method v="2" />
@@ -88,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752781996398</updated>
-      <workItem from="1752781997965" duration="10132000" />
+      <workItem from="1752781997965" duration="17016000" />
     </task>
     <servers />
   </component>
